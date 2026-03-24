@@ -2,11 +2,16 @@ API Testing Project – Workflow & Negative Testing (Postman)
 Overview: This project demonstrates end-to-end API testing of a Trello-like system using Postman.
 It focuses on validating core CRUD workflows, negative scenarios, and data reliability across requests.
 
-🎯 Objectives
+🎯 Objectives:
+
 -Validate core API workflows (Create → Read → Update → Delete)
+
 -Apply risk-based testing principles
+
 -Implement negative testing scenarios
+
 -Ensure data consistency across requests
+
 -Demonstrate structured QA thinking using Postman scripting
 
 Testing Strategy: This project follows a real-world QA approach:
