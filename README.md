@@ -11,7 +11,9 @@ Overview: This project demonstrates end-to-end API testing of a Trello-like syst
 -Demonstrate structured QA thinking using Postman scripting.  
 
 
+
 Testing Strategy: This project follows a real-world QA approach:  
+
 
 ✅ 1. Happy Path Validation  
 -Validate core workflow functionality.  
