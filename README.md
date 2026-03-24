@@ -21,6 +21,8 @@ Testing Strategy: This project follows a real-world QA approach:
 -Confirm resources are created, updated, and deleted correctly.  
 
 ![Happy Path Testing](./Screenshots/happy-path-get-request-1.png)  
+(Screenshot: Shows the Happy Path on the Left and then organization of tests in the main window. Organized by Structure, Schema, Data Integrity, and Business Rules)  
+
 
 ⚠️ 2. Negative Testing (High Priority)  
 -Invalid resource IDs (randomized strings).  
@@ -28,8 +30,13 @@ Testing Strategy: This project follows a real-world QA approach:
 -Deleted resource validation (expecting 404).  
 -Error handling and response validation.  
 
-![Negative Testing, Assertions and Debugging](./Screenshots/negative-testing-invalid-id-2.png)  
+![Negative Testing, Assertions and Debugging](./Screenshots/negative-testing-invalid-id-2.png)
+(Screenshot: An example of how I generate data to resemble live conditions while still ensuring failure)  
+  
+
 ![Negative Testing, Pre-request Scripts](./Screenshots/negative-testing-invalid-id-1.png)  
+(Screenshot: Shows Assertions and a test to help with debugging when dealing with randomness)   
+
 
 
 🔄 3. Workflow Validation  
