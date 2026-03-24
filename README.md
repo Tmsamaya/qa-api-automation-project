@@ -8,8 +8,13 @@ Overview: This project demonstrates end-to-end API testing of a Trello-like syst
 -Apply risk-based testing principles.  
 -Implement negative testing scenarios.  
 -Ensure data consistency across requests.  
--Demonstrate structured QA thinking using Postman scripting.  
+-Demonstrate structured QA thinking using Postman scripting. 
 
+  🛠 Tools & Technologies:  
+-Postman (Collections, Environments).  
+-JavaScript (Pre-request & Test scripts).  
+-REST APIs.  
+-Newman (CLI, reporter).  
 
 
 Testing Strategy: This project follows a real-world QA approach:  
@@ -50,11 +55,6 @@ Testing Strategy: This project follows a real-world QA approach:
 -Data integrity verification.  
 -Console logging for debugging and traceability.  
 
-🛠 Tools & Technologies:  
--Postman (Collections, Environments).  
--JavaScript (Pre-request & Test scripts).  
--REST APIs.  
-
 📊 Example Test Scenarios  
 -Create resource → verify success (200/201).  
 -Retrieve resource → validate correct data.  
@@ -67,6 +67,8 @@ Testing Strategy: This project follows a real-world QA approach:
 -Pre-request scripts (dynamic data handling).  
 -Post-response tests (assertions & validation).  
 -Negative test case execution.  
+-Newman (htmlextra) report.  
+
 
 🚀 How to Use:  
 -Import the Postman collection.  
