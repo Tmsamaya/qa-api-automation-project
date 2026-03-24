@@ -20,11 +20,17 @@ Testing Strategy: This project follows a real-world QA approach:
 -Ensure endpoints return expected status codes (200/201).  
 -Confirm resources are created, updated, and deleted correctly.  
 
+![Happy Path Testing](./Screenshots/happy-path-get-request-1.png)  
+
 ⚠️ 2. Negative Testing (High Priority)  
 -Invalid resource IDs (randomized strings).  
 -Missing or malformed inputs.  
 -Deleted resource validation (expecting 404).  
 -Error handling and response validation.  
+
+![Negative Testing, Assertions and Debugging](./Screenshots/negative-testing-invalid-id-2.png)  
+![Negative Testing, Pre-request Scripts](./Screenshots/negative-testing-invalid-id-1.png)  
+
 
 🔄 3. Workflow Validation  
 -Chain requests using dynamic data (IDs).  
