@@ -1,82 +1,157 @@
-API Testing Project- Workflow & Negative Testing (Postman)  
+# 🧪 Trello API Test Automation Project
 
-Overview: This project demonstrates end-to-end API testing of a Trello-like system using Postman. It focuses on validating core CRUD workflows, negative scenarios, and data reliability across requests.
+## 📌 Overview
 
-🎯 Objectives:
+This project is a comprehensive API testing suite built using **Postman** and executed via **Newman (CLI)**. It demonstrates end-to-end testing of Trello’s core functionality, including board and card management, with a strong focus on structured validation and real-world QA practices.
 
--Validate core API workflows (Create → Read → Update → Delete).    
--Apply risk-based testing principles.  
--Implement negative testing scenarios.  
--Ensure data consistency across requests.  
--Demonstrate structured QA thinking using Postman scripting. 
+---
 
-  🛠 Tools & Technologies:  
--Postman (Collections, Environments).  
--JavaScript (Pre-request & Test scripts).  
--REST APIs.  
--Newman (CLI, reporter).  
+## 🚀 Key Features
 
+* ✅ End-to-end **CRUD workflow testing**
+* 🔁 **Dynamic variable chaining** across requests
+* 🧪 Layered test validation strategy:
 
-Testing Strategy: This project follows a real-world QA approach:  
+  * Structure validation
+  * Schema validation
+  * Data integrity checks
+  * Business rule validation
+* ❌ Robust **negative testing scenarios**
+* ⚙️ CLI execution using **Newman**
+* 📊 HTML reporting with **htmlextra reporter**
 
+---
 
-✅ 1. Happy Path Validation  
--Validate core workflow functionality.  
--Ensure endpoints return expected status codes (200/201).  
--Confirm resources are created, updated, and deleted correctly.  
+## 🔄 Test Workflow (Happy Path)
 
-![Happy Path Testing](./Screenshots/happy-path-get-request-1.png)  
-(Screenshot: Shows the Happy Path on the Left and then organization of tests in the main window. Organized by Structure, Schema, Data Integrity, and Business Rules)  
+The primary workflow simulates a real user scenario:
 
+1. Create Board
+2. Create Lists (To Do / Done)
+3. Create Card
+4. Add Comment to Card
+5. Update Card (description + move list)
+6. Validate Card State
+7. Delete Card
+8. Confirm Card Deletion
+9. Delete Board
+10. Confirm Board Deletion
 
-⚠️ 2. Negative Testing (High Priority)  
--Invalid resource IDs (randomized strings).  
--Missing or malformed inputs.  
--Deleted resource validation (expecting 404).  
--Error handling and response validation.  
+---
 
-![Negative Testing, Assertions and Debugging](./Screenshots/negative-testing-invalid-id-2.png)
-(Screenshot: An example of how I generate data to resemble live conditions while still ensuring failure)  
-  
+## ❌ Negative Testing Coverage
 
-![Negative Testing, Pre-request Scripts](./Screenshots/negative-testing-invalid-id-1.png)  
-(Screenshot: Shows Assertions and a test to help with debugging when dealing with randomness)   
+Includes scenarios such as:
 
+* Missing / invalid API key
+* Missing / invalid token
+* Invalid resource IDs
+* Missing required fields
 
+These tests validate API robustness and proper error handling.
 
-🔄 3. Workflow Validation  
--Chain requests using dynamic data (IDs).  
--Validate data persistence across multiple requests.  
--Ensure system behaves correctly after state changes.  
+---
 
-🧾 4. Assertions & Validation
--Status code validation.  
--Response body checks.  
--Data integrity verification.  
--Console logging for debugging and traceability.  
+## 🧠 Test Strategy
 
-📊 Example Test Scenarios  
--Create resource → verify success (200/201).  
--Retrieve resource → validate correct data.  
--Delete resource → verify removal.  
--Retrieve deleted resource → expect 404.  
--Invalid ID request → validate error handling.  
+Tests are structured in layered validation levels:
 
-📸 Screenshots Included:  
--Example request + response validation.  
--Pre-request scripts (dynamic data handling).  
--Post-response tests (assertions & validation).  
--Negative test case execution.  
--Newman (htmlextra) report.  
+* **Structure**
+  Ensures required fields exist in the response.
 
+* **Schema**
+  Validates data types and response shape.
 
-🚀 How to Use:  
--Import the Postman collection.  
--Set up an environment with: API key, Token.  
--Run requests individually or as a collection.  
+* **Data Integrity**
+  Confirms returned values match expected inputs (e.g., variable chaining).
 
-💡 Key Takeaways:  
--Demonstrates backend-focused QA skills.  
--Highlights risk-based and negative testing mindset.  
--Shows ability to validate workflows, not just endpoints.  
--Uses scripting to simulate real-world test automation patterns.  
+* **Business Rules**
+  Verifies functional behavior (e.g., card moves to correct list).
+
+---
+
+## 📸 Postman Execution (Visual Proof)
+
+### ✅ Happy Path Workflow
+
+![Happy Path](Screenshots/happy-path-get-request-1.png)
+
+### ❌ Negative Testing Examples
+
+![Negative Tests](Screenshots/negative-testing-invalid-id-1.png)  
+
+![Negative Tests](Screenshots/negative-testing-invalid-id-2.png)  
+(Shows an example of generating data to mimic ID's)
+
+---
+
+## ⚙️ Running Tests with Newman
+
+### Prerequisites
+
+* Node.js installed
+* Newman installed:
+
+```bash
+npm install -g newman
+```
+
+### Run Collection
+
+```bash
+newman run "Trello API.postman_collection.json" -e "Trello Environment.postman_environment.json"
+```
+
+### Run with HTML Report
+
+```bash
+newman run "Trello API.postman_collection.json" -e "Trello Environment.postman_environment.json" -r htmlextra --reporter-htmlextra-export report.html
+```
+
+---
+
+## 📊 Newman HTML Report
+
+The collection can be executed via CLI using Newman, generating a detailed HTML report:
+
+![Newman Summary](Screenshots/newman-summary.png)
+![Request Breakdown](Screenshots/newman-request-breakdown.png)
+
+---
+
+## 🔐 Environment Configuration
+
+This project uses environment variables for sensitive data:
+
+* `trelloKey`
+* `trelloToken`
+
+⚠️ **Note:**
+API credentials are not included. Replace placeholders in the environment file with your own values.
+
+---
+
+## 🛠️ Tech Stack
+
+* Postman
+* Newman
+* JavaScript (Postman scripting)
+* Trello REST API
+
+---
+
+## 💡 Highlights
+
+* Demonstrates real-world QA workflow design
+* Focus on maintainability and clarity
+* Emphasis on both positive and negative testing
+* CLI integration for automation readiness
+
+---
+
+## 👤 Author
+
+Tomas Amaya
+QA Engineer (6+ years experience)
+
+---
