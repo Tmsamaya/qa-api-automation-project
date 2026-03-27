@@ -56,16 +56,16 @@ These tests validate API robustness and proper error handling.
 
 Tests are structured in layered validation levels:
 
-* **Structure**
+* **Structure**:
   Ensures required fields exist in the response.
 
-* **Schema**
+* **Schema**:
   Validates data types and response shape.
 
-* **Data Integrity**
+* **Data Integrity**:
   Confirms returned values match expected inputs (e.g., variable chaining).
 
-* **Business Rules**
+* **Business Rules**:
   Verifies functional behavior (e.g., card moves to correct list).
 
 ---
