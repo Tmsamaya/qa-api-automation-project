@@ -116,7 +116,7 @@ This project includes a **CI pipeline using GitHub Actions** to automatically ex
    * ✅ All tests pass → workflow succeeds
 6. Test reports are generated and uploaded as artifacts
 
-![Happy Path](Screenshots/happy-path-get-request-1.png)
+![CI Pipeline](Screenshots/github-actions.png)
 ---
 
 ### 🔐 Secure Configuration
