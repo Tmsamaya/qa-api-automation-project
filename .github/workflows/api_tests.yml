@@ -22,7 +22,7 @@ jobs:
       run: npm install -g newman
       
     - name: Run API tests
-      run: newman run "Trello API.postman_collection.json" --env-var "baseUrl=https://api.trello.com" --env-var "trellokey=${{ secrets.TRELLO_KEY }}" --env-var "trelloToken=${{ secrets.TRELLO_TOKEN }}" -r cli,junit --reporter-junit-export results.xml
+      run: newman run "Trello API.postman_collection.json" --env-var "baseUrl=https://api.trello.com" --env-var "trelloKey=${{ secrets.TRELLO_KEY }}" --env-var "trelloToken=${{ secrets.TRELLO_TOKEN }}" -r cli,junit --reporter-junit-export results.xml
       
     - name: upload report
       uses: actions/upload-artifact@v4
