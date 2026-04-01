@@ -1034,7 +1034,7 @@
                   "\r",
                   "pm.test(\"Board is Created\", ()=> {\r",
                   "    \r",
-                  "    pm.expect(response.name).to.eql(\"Learning Postman \" + pm.collectionVariables.get(\"boardNumber\"));\r",
+                  "    pm.expect(response.name).to.eql(\"Happy Path 1 - \" + pm.collectionVariables.get(\"boardNumber\"));\r",
                   "    pm.expect(response.closed).to.be.false;\r",
                   "\r",
                   "});\r",
@@ -1081,7 +1081,7 @@
             "method": "POST",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/1/boards/?name=Happy Path 1({{boardNumber}})&key={{trelloKey}}&token={{trelloToken}}",
+              "raw": "{{baseUrl}}/1/boards/?name=Happy Path 1 - {{boardNumber}}&key={{trelloKey}}&token={{trelloToken}}",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -1093,7 +1093,7 @@
               "query": [
                 {
                   "key": "name",
-                  "value": "Happy Path 1({{boardNumber}})"
+                  "value": "Happy Path 1 - {{boardNumber}}"
                 },
                 {
                   "key": "key",
