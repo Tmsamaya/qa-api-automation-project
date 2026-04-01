@@ -4,6 +4,7 @@
 
 This project is a comprehensive API testing suite built using **Postman** and executed via **Newman (CLI)**. It demonstrates end-to-end testing of Trello’s core functionality, including board and card management, with a strong focus on structured validation and real-world QA practices.
 
+![CI](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/api-tests.yml/badge.svg)
 ---
 
 ## 🚀 Key Features
