@@ -85,6 +85,50 @@ Tests are structured in layered validation levels:
 (Shows an example of generating data to mimic ID's)
 
 ---
+---
+
+## 🚀 CI/CD Integration – GitHub Actions + Newman
+
+This project includes a **CI pipeline using GitHub Actions** to automatically execute API tests on every code change.
+
+### 🔧 What It Does
+
+* Triggers on every **push** and **pull request**
+* Runs in a clean **Ubuntu environment**
+* Installs **Node.js + Newman**
+* Executes the full Postman collection via CLI
+* Injects credentials securely using **GitHub Secrets**
+* Generates **JUnit test reports** per run
+
+---
+
+### 🧪 Test Execution Flow
+
+1. Repository is checked out in a fresh CI environment
+2. Node.js is installed for CLI tooling
+3. Newman is installed globally via npm
+4. Postman collection is executed with runtime variables:
+   * `trelloKey`
+   * `trelloToken`
+   * `baseUrl`
+5. Results are evaluated:
+   * ❌ Any failure → workflow fails
+   * ✅ All tests pass → workflow succeeds
+6. Test reports are generated and uploaded as artifacts
+
+![Happy Path](Screenshots/happy-path-get-request-1.png)
+---
+
+### 🔐 Secure Configuration
+
+Sensitive credentials are **never stored in the repository**.
+
+They are injected at runtime using GitHub Secrets:
+
+```bash
+--env-var "trelloKey=${{ secrets.TRELLO_KEY }}"
+--env-var "trelloToken=${{ secrets.TRELLO_TOKEN }}"
+```
 
 ## ⚙️ Running Tests with Newman
 
@@ -136,6 +180,7 @@ API credentials are not included. Replace placeholders in the environment file w
 
 * Postman
 * Newman
+* GitHub Actions
 * JavaScript (Postman scripting)
 * Trello REST API
 
@@ -144,9 +189,10 @@ API credentials are not included. Replace placeholders in the environment file w
 ## 💡 Highlights
 
 * Demonstrates real-world QA workflow design
-* Focus on maintainability and clarity
-* Emphasis on both positive and negative testing
-* CLI integration for automation readiness
+* End-to-end API validation with layered testing
+* Strong negative testing and edge case coverage
+* CI/CD integration for automated test execution
+* Secure credential management using GitHub Secrets
 
 ---
 
