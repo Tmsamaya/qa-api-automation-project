@@ -19,7 +19,9 @@ This project is a comprehensive API testing suite built using **Postman** and ex
   * Business rule validation
 * ❌ Robust **negative testing scenarios**
 * ⚙️ CLI execution using **Newman**
-* 📊 HTML reporting with **htmlextra reporter**
+* 🔄 **CI/CD integration with GitHub Actions**
+* 🔐 Secure credential handling via **GitHub Secrets**
+* 📊 Test reporting (CLI + JUnit + HTML)
 
 ---
 
